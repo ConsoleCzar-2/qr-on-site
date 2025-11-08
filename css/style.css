@@ -1,0 +1,157 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #090040;
+    color: white;
+    padding: 20px 20px;
+    text-align: left;
+
+    font-size: 1.5em;
+}
+
+
+body{
+    background: linear-gradient(45deg, #edbfbf, #9af4f2);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.description {
+    width: 100%;
+    margin: 0 0 20px 0;
+    font-size: 1.5em;
+    color: #FFCC00;
+    text-align: center;
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 20px 140px;
+    font-size: 1em;
+
+    background: linear-gradient(15deg, #a21afc, #471396);
+    color: #FFCC00;
+
+    flex: auto;
+    min-height: calc(100vh - 120px);
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.column {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 20px;
+    flex: 1 1 0;
+    
+    min-width: 280px;
+
+}
+
+
+.qr-scanner,
+.qr-generator {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 20px;
+    flex: 1 1 0;
+    min-width: 280px;
+}
+
+.qr-scanner h2,
+.qr-generator h2 {
+    margin-bottom: 15px;
+    color: #FFCC00;
+}
+
+
+
+
+#qr-input,
+input[type="file"],
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: black 2px solid;
+    border-radius: 4px;
+    font-size: 1em;
+    background: rgba(255,255,255,0.9);
+    color: #090040;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#qr-input:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #FFCC00;
+    box-shadow: 0 0 0 3px rgba(255,204,0,0.2);
+}
+
+input[type="file"] {
+    padding: 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+
+#scan-result,
+#qr-code {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    min-height: 40px;
+}
+
+#qr-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+
+
+button {
+    background-color: #090040;
+    color: white;
+    margin: 8px 0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #1a043d;
+    transform: scale(1.02);
+
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+        
+footer {
+    background-color: #090040;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.3);
+}

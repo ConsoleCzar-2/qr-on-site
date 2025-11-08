@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR On-site</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+
+    <header>
+        <h1>QR On-site</h1>
+    </header>
+</head>
+
+<body>
+    <main>
+
+        <p class="description">This is a simple QR code Scanner and Generator website.</p>
+
+        <div class="qr-scanner">
+            <h2>QR Code Scanner</h2>
+            <input type="file" id="qr-image-upload" accept="image/*">
+            <canvas id="canvas" hidden></canvas>
+            <button id="start-scan">Start Scanning</button>
+            <p id="scan-result">Scan Result: <span>None</span></p>
+        </div>
+
+        <div class="qr-generator">
+            <h2>QR Code Generator</h2>
+            <input type="text" id="qr-input" placeholder="Enter the text to generate QR code">
+            <button id="generate-qr">Generate QR</button>
+            <div id="qr-code">
+                <!-- To display QR code here, will be updated dynamically -->
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2025 QR On-site</p>
+    </footer>
+</body>
+</html>
