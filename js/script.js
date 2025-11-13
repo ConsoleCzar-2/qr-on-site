@@ -21,6 +21,7 @@ for (let exponent = 1, value = 1; exponent < 256; exponent++) {
   EXP[exponent % 255] = value;
 }
 
+// Polynomial operations in Galois field
 function mul(a, b) {
   return a && b ? EXP[(LOG[a] + LOG[b]) % 255] : 0;
 }
@@ -58,6 +59,7 @@ function polyRest(dividend, divisor) {
   return rest;
 }
 
+// Generator polynomial for EDC
 function getGeneratorPoly(degree) {
   let lastPoly = new Uint8Array([1]);
   for (let index = 0; index < degree; index++) {
@@ -66,6 +68,7 @@ function getGeneratorPoly(degree) {
   return lastPoly;
 }
 
+// Calculating EDC
 function getEDC(data, codewords) {
   const degree = codewords - data.length;
   const messagePoly = new Uint8Array(codewords);
@@ -73,6 +76,7 @@ function getEDC(data, codewords) {
   return polyRest(messagePoly, getGeneratorPoly(degree));
 }
 
+// Data Encoding
 function getByteData(content, lengthBits, dataCodewords) {
   const data = new Uint8Array(dataCodewords);
   const rightShift = (4 + lengthBits) & 7;
@@ -269,7 +273,7 @@ document.getElementById('generate-qr').addEventListener('click', () => {
   try {
     qrDiv.innerHTML = '<p style="text-align: center;">Generating QR code...</p>';
     
-  // Generate QR matrix and render with padding
+  // Generat QR matrix and render with padding
   const matrix = generateQRMatrix(text);
   const canvas = renderQRCode(matrix, 'qr-code', 8, 4); // 4 modules padding
 
