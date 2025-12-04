@@ -14,7 +14,7 @@ This project is part of **[Winter of Open Source](https://winter-of-open-source.
 
 <!-- Add your screenshots here -->
 <p align="center">
-  <img src="assets/screenshots/image.png" alt="QR Generator Demo" width="400">
+  <img src="assets/screenshots/image.png" alt="QR Generator Demo" width="1000">
   <!-- <img src="assets/screenshots/scanner-demo.png" alt="QR Scanner Demo" width="400"> -->
 </p>
 
