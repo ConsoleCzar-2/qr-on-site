@@ -6,17 +6,8 @@
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-<!-- [![GDGoC IIEST Shibpur](assets/gdsc-logo.png)](https://gdg.community.dev/gdg-on-campus-indian-institute-of-engineering-science-and-technology-shibpur-howrah-india/)
-[![CodeIIEST](assets/codeiiest-logo.png)](https://www.codeiiest.in/) -->
-
-<div style="display: inline-block;">
-    <a href="https://gdg.community.dev/gdg-on-campus-indian-institute-of-engineering-science-and-technology-shibpur-howrah-india/">
-        <img src="assets/gdsc-logo.png" alt="GDGoC IIEST Shibpur" style="max-width: 25px; height: 25px;">
-    </a>
-    <a href="https://www.codeiiest.in/">
-        <img src="assets/codeiiest-logo.png" alt="CodeIIEST" style="max-width: 25px; height: 25px;">
-    </a>
-</div>
+<a href="https://gdg.community.dev/gdg-on-campus-indian-institute-of-engineering-science-and-technology-shibpur-howrah-india/"><img src="assets/gdsc-logo.png" alt="GDGoC IIEST Shibpur" height="20"></a>
+<a href="https://www.codeiiest.in/"><img src="assets/codeiiest-logo.png" alt="CodeIIEST" height="20"></a>
 
 [![Winter of Open Source](https://img.shields.io/badge/Winter%20of%20Open%20Source-2025-purple)](https://winter-of-open-source.vercel.app/)
 
