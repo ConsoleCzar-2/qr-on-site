@@ -8,7 +8,7 @@
 
 **QR On-Site** is a web-based QR Code Scanner and Generator built from scratch without external QR libraries.
 
-This project is part of **[Winter of Open Source](https://winter-of-open-source.vercel.app/)**, where contributors learn to implement QR code encoding/decoding algorithms from the ground up, understand error correction, and build a fully functional QR code tool.
+This project is part of IIEST, Shibpur's **[Winter of Open Source](https://winter-of-open-source.vercel.app/)**, where contributors learn to implement QR code encoding/decoding algorithms from the ground up, understand error correction, and build a fully functional QR code tool.
 
 ## Web Interface
 
