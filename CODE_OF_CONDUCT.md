@@ -80,8 +80,8 @@ Examples of representing our community include:
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement at:
 
-**Discord**: Contact any moderator with the "Mentor" role
-**Email**: [Add mentor email here]
+**Discord**: Contact any moderator with the "Mentor" role 
+**Email**: [abhirup1504@gmail.com]
 
 All complaints will be reviewed and investigated promptly and fairly.
 
