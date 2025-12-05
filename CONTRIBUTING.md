@@ -10,7 +10,6 @@ We're excited to have you contribute to this QR Code Scanner and Generator proje
 ## Table of Contents
 
 - [Setting Up Local Environment](#setting-up-local-environment)
-- [Folder Structure](#folder-structure)
 - [How to Contribute](#how-to-contribute)
 - [How to Write a Clean PR](#how-to-write-a-clean-pr)
 - [Scoring Rules](#scoring-rules)
