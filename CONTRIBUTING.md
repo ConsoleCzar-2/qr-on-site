@@ -181,7 +181,8 @@ git push origin fix/issue-number-short-description
 |-------|--------|
 |**First 10 PRs** | +10 |
 | **First PR of the Week** (resets Monday 12 AM) | +10 |
-| **Most Impactful PR **(decided at end) | +50 |
+| **Most Impactful PR** (decided at end) | +50 |
+|**New issue added** | +20 |
 
 ### Rules
 
