@@ -270,7 +270,7 @@ function applyMask0(row, col, bit) {
 ## Important Rules
 
 - Work on **one issue at a time**
-- Complete within **48 hours** (can be extended based on difficulty)
+- Complete within **72 hours** (can be extended based on difficulty)
 - Respect the code of conduct
 - Always link your PR to an issue
 - **No plagiarism**
