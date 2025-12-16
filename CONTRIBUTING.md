@@ -171,9 +171,6 @@ git push origin fix/issue-number-short-description
 | **Easy** | 10 |
 | **Medium** | 20 |
 | **Hard** | 40 |
-| **Documentation Fix** | 5 |
-| **Bug Fix** | 20 |
-| **Feature Addition** | 30 |
 
 ### Bonuses
 
