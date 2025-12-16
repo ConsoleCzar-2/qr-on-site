@@ -198,8 +198,21 @@ input[type="file"] {
     justify-content: center;
     align-items: center;
     min-height: 200px;
+    /*added to improve vertical layout and qr visibility on mobile */
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
 }
 
+/*min width 100% to avoid horizontal scrolling, prevent overflow 
+padding less to save space on mobile screens*/
+@media (max-width: 768px) {
+    .qr-scanner,
+    .qr-generator {
+        min-width: 100%;
+        padding: 15px;
+    }
+}
 
 button {
     background-color: hsl(146, 91%, 25%);
