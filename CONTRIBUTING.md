@@ -84,7 +84,7 @@ This project has **no npm/yarn dependencies**. It's pure HTML, CSS, and JavaScri
 * Comment `/assign` on the issue you want to work on
 * Wait for maintainer approval
 * **Only 1 person per issue at a time**
-* **Complete within 48 hours** or it gets unassigned
+* **Complete within 72 hours** or it gets unassigned
 
 ### Step 3: Create a Branch
 
@@ -188,7 +188,7 @@ git push origin fix/issue-number-short-description
 
 - **Only merged PRs count**
 - Work on **only 1 issue at a time**
-- Complete within **48 hours** or issue gets unassigned
+- Complete within **72 hours** or issue gets unassigned
 - Moreover, you can **raise your own issues**, those will be added if impactful for the repo
 
 ---
