@@ -44,10 +44,13 @@
             <p>Drag & drop an image here or upload <br> </p> 
             <input type="file" id="qr-image-upload" accept="image/*">
         </div>
+        <!--  Preview area for scanning -->
+        <div class="Scan-preview">
             <canvas id="canvas" hidden>
                 <!-- To display the QR code to be scanned -->
             </canvas>
             <button id="start-scan">Start Scanning</button>
+        </div>
             <p id="scan-result">Scan Result: 
                 <span>
                     None
