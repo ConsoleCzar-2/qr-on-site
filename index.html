@@ -37,15 +37,19 @@
 
     <p class="description">This is a simple QR code Scanner and Generator website.</p>
 
-    <div class="qr-scanner">
-        <h2>QR Code Scanner</h2>
-        <input type="file" id="qr-image-upload" accept="image/*">
-        <canvas id="canvas" hidden>
-            <!-- To display the QR code to be scanned -->
-        </canvas>
-        <button id="start-scan">Start Scanning</button>
-        <p id="scan-result">Scan Result:
-            <span>
+        <div class="qr-scanner">
+            <h2>QR Code Scanner</h2>
+        <!-- Drop zone for image upload -->
+        <div id="drop-zone">
+            <p>Drag & drop an image here or upload <br> </p> 
+            <input type="file" id="qr-image-upload" accept="image/*">
+        </div>
+            <canvas id="canvas" hidden>
+                <!-- To display the QR code to be scanned -->
+            </canvas>
+            <button id="start-scan">Start Scanning</button>
+            <p id="scan-result">Scan Result: 
+                <span>
                     None
                 <!-- To be changed with the actual scan result -->
                 </span>

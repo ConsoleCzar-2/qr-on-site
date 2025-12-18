@@ -313,22 +313,111 @@ function escapeHtml(text) {
 	div.textContent = text;
 	return div.innerHTML;
 }
-
-
-// QR Code Scanner Logic - Dummy output for now
-document.getElementById('start-scan').addEventListener('click', () => {
-	const fileInput = document.getElementById('qr-image-upload');
-	const scanResult = document.getElementById('scan-result');
-
-	if (!fileInput.files || fileInput.files.length === 0) {
-		scanResult.innerHTML = 'Scan Result: <span style="color: #ff6b6b;">Please select an image file first</span>';
-		return;
-	}
-
-	// Dummy output - logic to be implemented
-	scanResult.innerHTML = 'Scan Result: <span style="color: #22c55e;">Dummy data for now!</span>';
-	fileInput.value = ''; // Reset input for next scan
+//QR Scanner handles image upload and drag & drop inputs
+const fileInput = document.getElementById('qr-image-upload');
+const dropZone = document.getElementById('drop-zone');
+const scanResult = document.getElementById('scan-result');
+fileInput.addEventListener('change',()=>{
+  const file = fileInput.files[0];
+  if(file){
+    scanResult.innerHTML = `Scan Result: <span>File Selected: ${file.name}</span>`;
+    handleFile(file);
+  }
 });
+dropZone.addEventListener('dragover', (e) => {
+  e.preventDefault(); 
+  // allows drop
+  dropZone.classList.add('dragover');
+});
+
+dropZone.addEventListener('dragleave', () => {
+  dropZone.classList.remove('dragover');
+});
+
+dropZone.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+
+  const file = e.dataTransfer.files[0];
+  if (file) {
+    scanResult.innerHTML = `Scan Result: <span>File dropped: ${file.name}</span>`;
+    handleFile(file);
+  }
+});
+//handler for uploaded/dropped images
+//render the images to canvas for decoding
+function handleFile(file) {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const scanResult = document.getElementById('scan-result');
+  //Resetting previous scan state
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  canvas.hidden = true;
+  // Basic validation
+  //only image files are supported for scanning
+  if (!file.type.startsWith('image/')) {
+    scanResult.innerHTML =
+      'Scan Result: <span style="color:#ff6b6b;">Invalid image file. Please select or drag and drop an image first</span>';
+    return;
+  }
+  const img = new Image();
+  img.onload = () => {
+    canvas.hidden = false;
+
+    // Match canvas size to image
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    // Draw image
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0);
+    scanResult.innerHTML =
+    'Scan Result: <span>Image loaded. Click "Start Scanning".</span>';
+  };
+
+  img.onerror = () => {
+    scanResult.innerHTML =
+      'Scan Result: <span style="color:#ff6b6b;">Failed to load image</span>';
+  };
+
+  img.src = URL.createObjectURL(file);
+}
+// Decoding logic 
+function decodeCanvas() {
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  const scanResult = document.getElementById('scan-result');
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  // jsQR API call
+  const qr = jsQR(imageData.data, canvas.width, canvas.height);
+
+  if (qr) {
+    scanResult.innerHTML =
+      `Scan Result: <span style="color:#22c55e;">${qr.data}</span>`;
+  } else {
+    scanResult.innerHTML =
+      'Scan Result: <span style="color:#ff6b6b;">No QR code detected</span>';
+  }
+}
+
+document.getElementById('start-scan').addEventListener('click', () => {
+  const canvas = document.getElementById('canvas');
+  const scanResult = document.getElementById('scan-result');
+
+  if (canvas.hidden) {
+    scanResult.innerHTML =
+      'Scan Result: <span style="color:#ff6b6b;">Please select or drag and drop an image first</span>';
+    return;
+  }
+
+  decodeCanvas();
+});
+
+
+
+
+
 
 //For theme toggle
 const themeToggle = document.getElementById('theme-toggle');
