@@ -20,6 +20,59 @@ This project is part of **IIEST, Shibpur's** **[Winter of Open Source](https://w
 | **QR Generator** | 🟡 Partial (Version 2-M hardcoded) | Support multiple versions, error correction levels, encoding modes |
 | **QR Scanner** | 🔴 Placeholder only | Implement finder pattern detection, image processing, data decoding |
 
+
+## Technical Implementation Details
+
+QR On-Site is built using a custom engine that follows the ISO/IEC 18004 standard. Below is the technical breakdown of the generation process:
+
+### 1. Data Processing Flow
+* **Encoding Mode:** Currently supports **Byte Mode** (ISO-8859-1).
+* **Error Correction:** Uses **Reed-Solomon Algorithm**. It generates parity bytes that allow the code to remain readable even if partially obscured.
+* **Structure:**
+    1. **Analysis:** Determine version and error correction level (Fixed to 2-M).
+    2. **Data Masking:** Applies one of 8 masking patterns to ensure the QR isn't too "clumped" for scanners.
+    3. **Matrix Placement:** Positions Finder Patterns (7x7), Timing Patterns, and Alignment Patterns before filling data bits.
+
+### 2. QR Anatomy Reference
+| Component | Function |
+| :--- | :--- |
+| **Finder Patterns** | 3 large squares in corners for position detection. |
+| **Timing Patterns** | Dotted lines that define the module grid coordinates. |
+| **Quiet Zone** | 4-module wide white border required for scanner contrast. |
+| **Format Information** | Stores the error correction level and mask pattern used. |
+
+---
+
+## 📚 Reference Materials
+These resources are used as the mathematical foundation for this project:
+* [Thonky’s QR Code Tutorial](https://www.thonky.com/qr-code-tutorial/) - Detailed guide on Reed-Solomon math.
+* [QR Code Generator Library](https://www.nayuki.io/page/qr-code-generator-library) - Reference for optimal matrix placement.
+* [Galois Field Arithmetic](https://en.wikiversity.org/wiki/Reed%E2%80%93Solomon_codes_for_coders) - Explanation of the $GF(2^8)$ math used for error correction.
+
+---
+
+---
+
+## 📖 Glossary of Terms
+
+To help contributors understand the codebase, here are the key terms used in this project:
+
+| Term | Definition |
+| :--- | :--- |
+| **Module** | The smallest unit of a QR code (the black or white "pixels"). |
+| **Version** | The size of the QR code. Versions range from 1 ($21 \times 21$ modules) to 40 ($177 \times 177$ modules). |
+| **Error Correction (EC)** | A mathematical method (Reed-Solomon) that adds redundant data to the QR code so it can still be read if damaged. |
+| **Masking** | A process where a grid pattern is XORed with the data to prevent large blocks of same-colored modules, which are hard for scanners to process. |
+| **Finder Pattern** | The "eyes" of the QR code; the three large squares in the corners used for orientation. |
+| **Binarization** | (Scanner Term) The process of converting a grayscale image from a camera into strictly black and white pixels. |
+| **Galois Field ($GF$)** | The specialized area of mathematics used to calculate error correction codes. |
+| **Alphanumeric Mode** | An encoding mode that allows for numbers, capital letters, and a few symbols ($$, %, *, +, -, ., /, :$$). |
+
+---
+
+
+
+
 ## Web Interface
 
 <p align="center">
